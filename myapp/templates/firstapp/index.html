@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>level two</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+
+  </head>
+  <body>
+    <div class="container">
+    <h1>welcome django record</h1>
+    <h2>here u access record</h2>
+
+    <div class="djangotwo">
+      {% if access_records %}
+        <table class="table">
+          <thead>
+            <th>Site name</th>
+            <th>Date Access</th>
+          </thead>
+
+
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name}}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        {% else %}
+        <p>No found</p>
+        {% endif %}
+    </div>
+    </div>
+  </body>
+</html>
